@@ -17,5 +17,22 @@
 
         <button style="padding:10px 15px; background:#0d6efd; color:white;">Save Meal</button>
     </form>
-</body>
+
+    <script>
+    document.querySelector("button").addEventListener("click", function(e) {
+        e.preventDefault();
+
+        let meal = document.querySelector("textarea").value;
+        let time = document.querySelector("input").value;
+
+        let data = {
+            meal: meal,
+            time: time,
+            date: new Date().toLocaleString()
+        };
+
+        localStorage.setItem("gutcare_meal", JSON.stringify(data));
+        alert("Meal saved!");
+    });
+</script></body>
 </html>
