@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GutCare Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-container {
+            padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 6px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            margin: 0 0 10px 0;
+        }
+
+        .quick-links {
+            margin-top: 40px;
+        }
+
+        .quick-links a {
+            display: block;
+            margin: 8px 0;
+            padding: 10px;
+            background: #0d6efd;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .quick-links a:hover {
+            background: #0b5ed7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        GutCare Dashboard
+    </div>
+
+    <div class="dashboard-container">
+        <h2>Welcome to your GutCare Dashboard</h2>
+        <p>Here is a quick overview of your recent gut health activities.</p>
+
+        <!-- Dashboard Cards -->
+        <div class="cards">
+
+           <div class="card">
+    <h3>Today's Symptoms</h3>
+    <p id="symptom-card">No symptoms logged today.</p>
+</div>
+
+<div class="card">
+    <h3>Recent Meal</h3>
+    <p id="meal-card">No meal logged yet.</p>
+</div>
+
+<div class="card">
+    <h3>Last Stool Log</h3>
+    <p id="stool-card">No stool entry yet.</p>
+</div>
+
+<div class="card">
+    <h3>Next Appointment</h3>
+    <p id="appointment-card">No appointment scheduled.</p>
+</div>
+
+        </div>
+
+        <!-- Quick Links -->
+        <div class="quick-links">
+            <h2>Quick Navigation</h2>
+
+            <a href="patient-register.html">Patient Registration</a>
+            <a href="staff-login.html">Staff Login</a>
+            <a href="symptom-tracker.html">Symptom Tracker</a>
+            <a href="meal-log.html">Meal Log</a>
+            <a href="stool-log.html">Stool Log</a>
+            <a href="appointments.html">Appointments</a>
+            <a href="reports.html">Reports</a>
+            <a href="index.html">Home Page</a>
+        </div>
+
+    </div>
+
+
+<script>
+    // SYMPTOMS
+    let symptoms = JSON.parse(localStorage.getItem("gutcare_symptoms"));
+    if (symptoms) {
+        document.getElementById("symptom-card").innerHTML =
+            `<strong>Symptoms:</strong> ${symptoms.symptoms}<br>
+             <strong>Pain Level:</strong> ${symptoms.pain}<br>
+             <small>${symptoms.date}</small>`;
+    }
+
+    // MEAL
+    let meal = JSON.parse(localStorage.getItem("gutcare_meal"));
+    if (meal) {
+        document.getElementById("meal-card").innerHTML =
+            `<strong>Meal:</strong> ${meal.meal}<br>
+             <strong>Time:</strong> ${meal.time}<br>
+             <small>${meal.date}</small>`;
+    }
+
+    // STOOL
+    let stool = JSON.parse(localStorage.getItem("gutcare_stool"));
+    if (stool) {
+        document.getElementById("stool-card").innerHTML =
+            `<strong>Bristol Type:</strong> ${stool.type}<br>
+             <strong>Notes:</strong> ${stool.notes}<br>
+             <small>${stool.date}</small>`;
+    }
+</script>
+</body>
+</html>
