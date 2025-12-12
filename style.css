@@ -15,22 +15,6 @@ body {
     display: inline-block;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    min-width: 220px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.3);
-    z-index: 5;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-}
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -44,4 +28,28 @@ body {
 .hero-images img {
     width: 30%;
     border-radius: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    min-width: 180px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background: #f2f2f2;
+}
+
+.show {
+    display: block;
 }
