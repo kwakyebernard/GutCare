@@ -49,6 +49,12 @@
             document.getElementById("servicesMenu").classList.toggle("show");
         }
 
+        function goToPage(url) {
+    if (url) {
+        window.location.href = url;
+    }
+}
+    
         window.onclick = function(event) {
             if (!event.target.matches('.dropbtn')) {
                 let dropdowns = document.getElementsByClassName("dropdown-content");
