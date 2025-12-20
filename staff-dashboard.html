@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GutCare | Staff Dashboard</title>
+  <link rel="stylesheet" href="staff-dashboard.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <header class="topbar">
+    <h2>GutCare Tracker</h2>
+
+    <div class="staff-info">
+      <span id="staffName">Staff Name</span>
+      <small id="staffRole">Staff Role</small>
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <!-- Main Dashboard -->
+  <main class="dashboard">
+
+    <!-- Welcome -->
+    <section class="welcome">
+      <h3>Welcome </h3>
+      <p>Manage gut health records and monitor patients.</p>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="actions">
+      <div class="card">➕ Add Patient</div>
+      <div class="card">📊 Patient Logs</div>
+      <div class="card">🍽 Diet Plan</div>
+      <div class="card">📝 Medical Notes</div>
+    </section>
+
+    <!-- Patients Table -->
+    <section class="patients">
+      <h3>Assigned Patients</h3>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Patient Name</th>
+            <th>Condition</th>
+            <th>Status</th>
+            <th>Last Update</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="patientTable">
+          <!-- Loaded by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Alerts -->
+    <section class="alerts">
+      <h3>Alerts & Notifications</h3>
+      <ul id="alertList">
+        <li> Ama K. missed medication</li>
+        <li> Stool abnormality detected</li>
+      </ul>
+    </section>
+
+  </main>
+
+ 
+</body>
+
+  <script>
+// 🔐 Check login
+if (!localStorage.getItem("staffName")) {
+  window.location.href = "staff-login.html";
+}
+
+// Load staff info
+document.getElementById("staffName").textContent =
+  localStorage.getItem("staffName");
+
+document.getElementById("staffRole").textContent =
+  localStorage.getItem("staffRole");
+
+// Sample patient data (replace with DB later)
+const patients = [
+  {
+    name: "Ama K.",
+    condition: "Stomach Ulcer",
+    status: "Critical",
+    lastUpdate: "2025-12-19"
+  },
+  {
+    name: "Yaw B.",
+    condition: "IBS",
+    status: "Improving",
+    lastUpdate: "2025-12-18"
+  }
+];
+
+// Populate table
+const table = document.getElementById("patientTable");
+
+patients.forEach(p => {
+  const row = document.createElement("tr");
+
+  row.innerHTML = `
+    <td>${p.name}</td>
+    <td>${p.condition}</td>
+    <td>${p.status}</td>
+    <td>${p.lastUpdate}</td>
+    <td>
+      <button onclick="viewPatient('${p.name}')">View</button>
+    </td>
+  `;
+
+  table.appendChild(row);
+});
+
+// View patient
+function viewPatient(name) {
+  alert("Opening patient record for " + name);
+}
+
+// Logout
+function logout() {
+  if (confirm("Logout from GutCare Tracker?")) {
+    localStorage.clear();
+    window.location.href = "staff-login.html";
+  }
+}
+
+  </script>
+</html>
