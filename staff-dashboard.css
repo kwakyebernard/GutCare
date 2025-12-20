@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+}
+
+/* Top Bar */
+.topbar {
+  background: #0b7285;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.staff-info span {
+  font-weight: bold;
+  display: block;
+}
+
+.staff-info small {
+  font-size: 12px;
+}
+
+.staff-info button {
+  margin-left: 15px;
+  padding: 6px 12px;
+  border: none;
+  background: #ff6b6b;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Dashboard */
+.dashboard {
+  padding: 20px;
+}
+
+.welcome {
+  margin-bottom: 25px;
+}
+
+/* Action Cards */
+.actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  background: #e3fafc;
+}
+
+/* Patients */
+.patients table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.patients th,
+.patients td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.patients th {
+  background: #e7f5ff;
+}
+
+.patients button {
+  padding: 5px 10px;
+  border: none;
+  background: #0b7285;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Alerts */
+.alerts {
+  margin-top: 30px;
+  background: #fff3bf;
+  padding: 15px;
+  border-radius: 6px;
+}
+
+.alerts li {
+  margin: 8px 0;
+}
