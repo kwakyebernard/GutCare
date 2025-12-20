@@ -21,6 +21,30 @@
     <small id="errorMsg"></small>
   </div>
 
-  <script src="staff-login.js"></script>
 </body>
+
+  <script>
+
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const staffId = document.getElementById("staffId").value;
+  const password = document.getElementById("password").value;
+  const errorMsg = document.getElementById("errorMsg");
+
+  // Demo credentials (replace with backend later)
+  if (staffId === "STAFF001" && password === "gutcare123") {
+
+    // Save staff info for dashboard
+    localStorage.setItem("staffName", "John Mensah");
+    localStorage.setItem("staffRole", "Nutritionist");
+
+    window.location.href = "staff-dashboard.html";
+  } else {
+    errorMsg.textContent = "Invalid Staff ID or Password";
+  }
+});
+    
+  </script>
+  
 </html>
