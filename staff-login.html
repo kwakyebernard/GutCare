@@ -1,23 +1,26 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Staff Login - GutCare</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>GutCare | Staff Login</title>
+  <link rel="stylesheet" href="staff-login.css">
 </head>
-
 <body>
-    <div class="navbar">Staff Login</div>
 
-    <form style="padding: 20px;">
-        <label>Staff ID</label><br>
-        <input type="text" style="width:100%; padding:10px;"><br><br>
+  <div class="login-container">
+    <h2>GutCare Tracker</h2>
+    <p>Staff Login</p>
 
-        <label>Password</label><br>
-        <input type="password" style="width:100%; padding:10px;"><br><br>
+    <form id="loginForm">
+      <input type="text" id="staffId" placeholder="Staff ID" required>
+      <input type="password" id="password" placeholder="Password" required>
 
-        <button style="padding:10px 15px; background:#0d6efd; color:white;">
-            Login
-        </button>
+      <button type="submit">Login</button>
     </form>
+
+    <small id="errorMsg"></small>
+  </div>
+
+  <script src="staff-login.js"></script>
 </body>
 </html>
