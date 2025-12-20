@@ -53,3 +53,51 @@ body {
 .show {
     display: block;
 }
+
+.gutcare-about {
+    padding: 40px 20px;
+    background: #f9fbfa;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.gutcare-about h2 {
+    color: #2a9d8f;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.about-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #264653;
+    margin-bottom: 10px;
+}
+
+.card p, .card li {
+    font-size: 14px;
+    color: #555;
+}
+
+.card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card ul li::before {
+    content: "✔ ";
+    color: #2a9d8f;
+}
