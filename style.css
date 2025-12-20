@@ -101,3 +101,22 @@ body {
     content: "✔ ";
     color: #2a9d8f;
 }
+
+.gutcare-footer {
+    background: #264653;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 10px;
+    font-family: Arial, sans-serif;
+}
+
+.gutcare-footer p {
+    margin: 4px 0;
+    font-size: 14px;
+}
+
+.footer-note {
+    font-size: 13px;
+    opacity: 0.85;
+}
+
